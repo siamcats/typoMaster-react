@@ -1,0 +1,368 @@
+.game {
+  min-height: 100vh;
+  padding: 20px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.game .container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 20px);
+  overflow: hidden;
+}
+
+.game h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+/* ゲーム開始画面 */
+.game-start {
+  text-align: center;
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.game-settings {
+  margin-bottom: 30px;
+}
+
+.game-settings p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.start-btn {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.3rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* ゲームエリア */
+.game-area {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 120px);
+  overflow: hidden;
+}
+
+/* ゲームタイマー */
+.game-timer {
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 8px 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+.timer-label {
+  font-size: 0.9rem;
+  margin-right: 8px;
+}
+
+.timer-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* テキスト表示 */
+.text-display {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-family: 'Courier New', monospace;
+  min-height: 60px;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.char {
+  position: relative;
+}
+
+.char.correct {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.char.incorrect {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.char.current {
+  background-color: #007bff;
+  color: white;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+/* 入力エリア */
+.input-area {
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.game-input {
+  width: 100%;
+  height: 60px;
+  padding: 8px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: 'Courier New', monospace;
+  resize: none;
+  transition: border-color 0.3s ease;
+}
+
+.game-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.game-input:disabled {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+/* ゲームコントロール */
+.game-controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.control-btn {
+  padding: 5px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.control-btn:not(.reset-btn) {
+  background: #007bff;
+  color: white;
+}
+
+.control-btn:not(.reset-btn):hover {
+  background: #0056b3;
+}
+
+.reset-btn {
+  background: #6c757d;
+  color: white;
+}
+
+.reset-btn:hover {
+  background: #545b62;
+}
+
+.control-btn:disabled {
+  background: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* プログレス情報 */
+.progress-info {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: #e9ecef;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #28a745, #20c997);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  color: #666;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .game h1 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  .game .container {
+    padding: 0 10px;
+    max-height: calc(100vh - 16px);
+  }
+  
+  .game-area {
+    padding: 12px;
+    max-height: calc(100vh - 80px);
+  }
+  
+  .text-display {
+    font-size: 0.9rem;
+    padding: 10px;
+    min-height: 50px;
+  }
+  
+  .game-input {
+    height: 50px;
+    font-size: 0.85rem;
+  }
+  
+  .game-controls {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .control-btn {
+    flex: 0 0 auto;
+    min-width: 80px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+}
+
+/* 小さい画面への追加対応 */
+@media (max-height: 600px) {
+  .game {
+    padding: 5px 0;
+  }
+  
+  .game h1 {
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+  }
+  
+  .game-area {
+    padding: 8px;
+    max-height: calc(100vh - 50px);
+  }
+  
+  .text-display {
+    min-height: 35px;
+    padding: 6px;
+    font-size: 0.85rem;
+  }
+  
+  .game-input {
+    height: 35px;
+    padding: 5px;
+  }
+}
+
+/* 極小画面への対応 */
+@media (max-height: 500px) {
+  .game h1 {
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+  
+  .game-area {
+    padding: 5px;
+    max-height: calc(100vh - 40px);
+  }
+  
+  .text-display {
+    min-height: 30px;
+    padding: 4px;
+    font-size: 0.8rem;
+  }
+  
+  .game-input {
+    height: 30px;
+    padding: 4px;
+  }
+  
+  .control-btn {
+    padding: 3px 8px;
+    font-size: 0.7rem;
+  }
+}
+
+/* ダークテーマ */
+.dark-theme .game {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.dark-theme .game-start,
+.dark-theme .game-area {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.dark-theme .game-settings p {
+  color: #ecf0f1;
+}
+
+.dark-theme .text-display {
+  background: #2c3e50;
+  border-color: #4a6741;
+  color: #ecf0f1;
+}
+
+.dark-theme .game-input {
+  background: #2c3e50;
+  border-color: #4a6741;
+  color: #ecf0f1;
+}
+
+.dark-theme .game-input:focus {
+  border-color: #3498db;
+}
+
+.dark-theme .progress-bar {
+  background: #2c3e50;
+}

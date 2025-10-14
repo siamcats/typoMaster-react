@@ -1,0 +1,330 @@
+.stats {
+  min-height: 100vh;
+  padding: 20px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stats h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stats-content {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.stats-section {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.stats-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.stats-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  border-left: 4px solid #007bff;
+  padding-left: 15px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #0056b3;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.best-card {
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+  border-color: #ffe5e5;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 最近のゲーム */
+.recent-games {
+  margin-top: 20px;
+}
+
+.no-games {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.games-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.game-record {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  border-left: 4px solid #007bff;
+  transition: all 0.3s ease;
+}
+
+.game-record:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.game-date {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.game-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.game-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-stat-label {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.game-stat-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* アクションボタン */
+.stats-actions {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.reset-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.reset-btn:hover:not(:disabled) {
+  background: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+.reset-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .stats h1 {
+    font-size: 2rem;
+  }
+  
+  .stats-content {
+    padding: 20px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .stat-card {
+    padding: 20px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .game-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .game-record {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .game-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .game-stat {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .game-stat-label {
+    margin-bottom: 0;
+  }
+}
+
+/* ダークテーマ */
+.dark-theme .stats {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.dark-theme .stats-content {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.dark-theme .stats-section h2 {
+  color: #ecf0f1;
+  border-left-color: #3498db;
+}
+
+.dark-theme .toggle-btn {
+  background: #3498db;
+}
+
+.dark-theme .toggle-btn:hover {
+  background: #2980b9;
+}
+
+.dark-theme .stat-card {
+  background: #2c3e50;
+  color: #ecf0f1;
+}
+
+.dark-theme .best-card {
+  background: #2c3e50;
+  border-color: #3498db;
+}
+
+.dark-theme .stat-number {
+  color: #ecf0f1;
+}
+
+.dark-theme .stat-label {
+  color: #bdc3c7;
+}
+
+.dark-theme .no-games {
+  background: #2c3e50;
+  color: #bdc3c7;
+}
+
+.dark-theme .game-record {
+  background: #2c3e50;
+  border-left-color: #3498db;
+}
+
+.dark-theme .game-record:hover {
+  background: #1a252f;
+}
+
+.dark-theme .game-date {
+  color: #bdc3c7;
+}
+
+.dark-theme .game-stat-label {
+  color: #bdc3c7;
+}
+
+.dark-theme .game-stat-value {
+  color: #ecf0f1;
+}
+
+.dark-theme .stats-actions {
+  border-top-color: #4a6741;
+}

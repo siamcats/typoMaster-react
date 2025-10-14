@@ -1,0 +1,302 @@
+.settings {
+  min-height: 100vh;
+  padding: 20px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.settings h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.settings-content {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.settings-section {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.settings-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.settings-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  border-left: 4px solid #007bff;
+  padding-left: 15px;
+}
+
+.setting-item {
+  margin-bottom: 20px;
+}
+
+.setting-item label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.setting-select {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.setting-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* チェックボックス関連 */
+.checkbox-item {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-label {
+  display: flex !important;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-bottom: 0 !important;
+}
+
+.setting-checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkmark {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e9ecef;
+  border-radius: 4px;
+  margin-right: 12px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.setting-checkbox:checked + .checkmark {
+  background: #007bff;
+  border-color: #007bff;
+}
+
+.setting-checkbox:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* 難易度情報 */
+.difficulty-info {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.difficulty-info h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.difficulty-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.difficulty-example {
+  padding: 10px;
+  background: white;
+  border-radius: 6px;
+  border-left: 4px solid #007bff;
+  font-family: 'Courier New', monospace;
+}
+
+.difficulty-example strong {
+  color: #007bff;
+  display: inline-block;
+  min-width: 60px;
+}
+
+/* 現在の設定 */
+.current-settings {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.current-setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.current-setting:last-child {
+  border-bottom: none;
+}
+
+.setting-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.setting-value {
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* アクションボタン */
+.settings-actions {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.reset-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.reset-btn:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .settings h1 {
+    font-size: 2rem;
+  }
+  
+  .settings-content {
+    padding: 20px;
+  }
+  
+  .settings-section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .setting-select {
+    max-width: 100%;
+  }
+  
+  .difficulty-examples {
+    gap: 8px;
+  }
+  
+  .difficulty-example {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .current-setting {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+/* ダークテーマ */
+.dark-theme .settings {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.dark-theme .settings-content {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.dark-theme .settings-section h2 {
+  color: #ecf0f1;
+  border-left-color: #3498db;
+}
+
+.dark-theme .setting-item label {
+  color: #ecf0f1;
+}
+
+.dark-theme .setting-select {
+  background: #2c3e50;
+  border-color: #4a6741;
+  color: #ecf0f1;
+}
+
+.dark-theme .setting-select:focus {
+  border-color: #3498db;
+}
+
+.dark-theme .checkmark {
+  border-color: #4a6741;
+}
+
+.dark-theme .setting-checkbox:checked + .checkmark {
+  background: #3498db;
+  border-color: #3498db;
+}
+
+.dark-theme .difficulty-info,
+.dark-theme .current-settings {
+  background: #2c3e50;
+}
+
+.dark-theme .difficulty-example {
+  background: #34495e;
+  border-left-color: #3498db;
+}
+
+.dark-theme .current-setting {
+  border-bottom-color: #4a6741;
+}
+
+.dark-theme .setting-name {
+  color: #ecf0f1;
+}
+
+.dark-theme .setting-value {
+  color: #3498db;
+}
+
+.dark-theme .settings-actions {
+  border-top-color: #4a6741;
+}
